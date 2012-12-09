@@ -14,13 +14,18 @@ exports.show = function(req, res) {
 exports.add = function(req, res) {
 	query = req.body.add_element;
 	queries = query.split(" ");
-	query_to_locations_map = get_query_to_locations_map(queries, function() {
-		this(query_to_locations_map);
+	console.log("here0");
+	get_query_to_locations_map(queries, function(query_to_locations_map) {
+		console.log("here1");
+		console.log(query_to_locations_map);
+		console.log("here2");
+
+		intersect_locations = get_intersecting_locations(query_to_locations_map);
+		console.log(intersect_locations);
 	});
-	console.log(query_to_locations_map); // Why doesnt this store anything
+	console.log("here3");
 
 	/*
-	intersect_locations = get_intersecting_locations(query_to_locations_map);
 
 	rest_of_locations = get_straggling_locations(query_to_locations_map, intersect_locations);
 
@@ -102,7 +107,6 @@ function get_query_to_locations_map(queries) {
 
 		num_queries_completed++;
 		if (num_queries_completed == num_queries) {
-			// This returns a map, it works
 			return query_to_locations_map;
 		}
 	};
