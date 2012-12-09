@@ -14,16 +14,10 @@ exports.show = function(req, res) {
 exports.add = function(req, res) {
 	query = req.body.add_element;
 	queries = query.split(" ");
-	console.log("here0");
 	get_query_to_locations_map(queries, function(query_to_locations_map) {
-		console.log("here1");
-		console.log(query_to_locations_map);
-		console.log("here2");
-
 		intersect_locations = get_intersecting_locations(query_to_locations_map);
 		console.log(intersect_locations);
 	});
-	console.log("here3");
 
 	/*
 
@@ -50,7 +44,8 @@ function get_intersecting_locations(query_to_locations_map) {
 		}
 	}
 
-	if (max_word != "") {
+	if (!max_word || max_word.length === 0) {
+		console.log("returned empty with: " + max_word);
 		return [];
 	}
 	intersect_list = query_to_locations_map[max_word];
@@ -59,12 +54,12 @@ function get_intersecting_locations(query_to_locations_map) {
 			continue;
 		}
 
-		intersect_list = intersection(intersect_list.sort(), query_to_locations_map[word].sort());
+		intersect_list = list_intersection(intersect_list.sort(), query_to_locations_map[word].sort());
 	}
 	return intersect_list;
 }
 
-function intersection(a, b) {
+function list_intersection(a, b) {
 	var ai = 0
 		, bi = 0
 		, result = new Array();
@@ -94,7 +89,7 @@ function get_url_names_for_url_ids(url_id_list) {
 	return [];
 }
 
-function get_query_to_locations_map(queries) {
+function get_query_to_locations_map(queries, cb_function) {
 	var query_to_locations_map = {};
 	num_queries = Math.min(queries.length, 15);
 	num_queries_completed = 0;
@@ -107,7 +102,7 @@ function get_query_to_locations_map(queries) {
 
 		num_queries_completed++;
 		if (num_queries_completed == num_queries) {
-			return query_to_locations_map;
+			cb_function(query_to_locations_map);
 		}
 	};
 
