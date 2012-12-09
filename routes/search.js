@@ -14,7 +14,9 @@ exports.show = function(req, res) {
 exports.add = function(req, res) {
 	query = req.body.add_element;
 	queries = query.split(" ");
-	query_to_locations_map = get_query_to_locations_map(queries);
+	query_to_locations_map = get_query_to_locations_map(queries, function() {
+		this(query_to_locations_map);
+	});
 	console.log(query_to_locations_map); // Why doesnt this store anything
 
 	/*
