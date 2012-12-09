@@ -6,6 +6,8 @@ exports.show = function(req, res) {
 }
 
 exports.add = function(req, res) {
+  query = req.body.add_element;
+  console.log(query);
   res.contentType("json");
-  res.send({item: req.body.add_element});
+  res.send({item: query});
 }

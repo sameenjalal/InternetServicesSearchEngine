@@ -4,10 +4,12 @@ import os
 import fileinput
 import time
 import re
+import pymongo
 
 #path = "path/to/file"
-path = "/ilab/users/samjalal/InternetServicesIndexer/parse_output/"
+path = "/home/samjalal/public/sameenjalal.com/InternetServices/InternetServicesIndexer/parse_output/"
 prefix_to_part_files = "parse"
+mongohq_url = "mongodb://samjalal:robin@linus.mongohq.com:10002/InternetServices"
 
 def run(file):
 	url_map = create_url_map(file)
@@ -40,14 +42,21 @@ def combine_dictionaries(main_dict, to_merge_dict):
 			main_dict[key] = to_merge_dict[key]
 	return main_dict
 
+def insert_into_mongohq(db, key, val):
+  db.word_to_urls.insert({"word": str(key), "urls": str(val)})
+
 def main():
+	conn = pymongo.Connection("linus.mongohq.com", 10002)
+	db = conn["InternetServices"]
+	db.authenticate("samjalal", "robin")
+
 	combined_word_to_urls = dict()
 	for file in os.listdir(path):
 		if file.startswith(prefix_to_part_files):
 			combined_word_to_urls = combine_dictionaries(combined_word_to_urls, run(path + file))
 
 	for key, value in sorted(combined_word_to_urls.iteritems(), key=lambda (k,v): (k,v)):
-		print str(key) + " " + str(value)
+		insert_into_mongohq(db, key, value)
 
 if __name__ == "__main__":
 	main()

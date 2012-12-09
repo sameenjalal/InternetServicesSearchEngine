@@ -1,16 +1,22 @@
+/**
+ * Environment
+ */
+var db_path = "mongodb://samjalal:robin@linus.mongohq.com:10002/InternetServices"
 
 /**
  * Module dependencies.
  */
 
 var express = require('express')
-  , routes = require('./routes')
-  , user = require('./routes/user')
+  , mongoose = require("mongoose")
   , http = require('http')
   , path = require('path')
+  , routes = require("./routes")
   , search = require('./routes/search');
 
 var app = express();
+
+db = mongoose.connect(db_path);
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
@@ -29,10 +35,13 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
-app.get('/users', user.list);
 app.get('/search', search.show);
 app.post('/add', search.add);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
+});
+
+mongoose.connection.on('open', function() {
+  console.log('Mongoose has opened a connection to '+ db_path);
 });
