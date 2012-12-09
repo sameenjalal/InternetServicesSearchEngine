@@ -77,9 +77,7 @@ def combine_dictionaries(main_dict, to_merge_dict):
 	return main_dict
 
 def insert_into_mongohq(db, key, val):
-  key = key.replace(".", "")
-  key = key.replace("$", "")
-  db.word_to_tf_idf.insert({key: str(val)})
+  db.word_to_tf_idf.insert({"word": str(key), "tf_idf": str(val)})
 
 def main():
 	conn = pymongo.Connection("linus.mongohq.com", 10002)
