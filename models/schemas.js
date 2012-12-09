@@ -5,7 +5,7 @@ var ObjectId = Schema.ObjectId;
 
 var TfIdfSchema = new Schema({
   'word': String,
-  'tf_idf_value': Number
+  'tf_idf': Number
 });
 
 var WordToUrlIdsSchema = new Schema({
@@ -18,6 +18,8 @@ var UrlIdsToUrlSchema = new Schema({
   "url": String
 });
 
-module.exports = mongoose.model('TfIdf', TfIdfSchema);
-module.exports = mongoose.model('WordToUrlIds', WordToUrlIdsSchema);
-module.exports = mongoose.model('UrlIdsToUrl', UrlIdsToUrlSchema);
+module.exports = {
+  tf_idf: mongoose.model('word_to_tf_idf', TfIdfSchema)
+  , word_to_url_ids: mongoose.model('word_to_urls', WordToUrlIdsSchema)
+  , url_ids_to_url: mongoose.model('url_ids_to_url', UrlIdsToUrlSchema)
+};
