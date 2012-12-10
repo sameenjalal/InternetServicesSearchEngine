@@ -1,8 +1,8 @@
 var mongoose = require("mongoose")
-	, schema = require("../models/schemas")
-	, word_to_tf_idf = schema.tf_idf
-	, word_to_url_ids = schema.word_to_url_ids
-	, url_ids_to_url = schema.url_ids_to_url;
+	, schemas = require("../models/schemas")
+	, word_to_tf_idf = schemas.tf_idf
+	, word_to_url_ids = schemas.word_to_url_ids
+	, url_ids_to_url = schemas.url_ids_to_url;
 
 exports.show = function(req, res) {
 	res.render('search', {
@@ -24,11 +24,12 @@ exports.add = function(req, res) {
 		combined_url_id_response = ranked_intersected_locations.concat(ranked_stragger_locations);
 		get_url_names_for_url_ids(combined_url_id_response, function(list_of_urls) {
 			//console.log(list_of_urls);
+
+			// After I get the data back properly, res.send({items: list_of_urls});
+			res.contentType("json");
+			res.send({item: query});
 		});
 	});
-
-	res.contentType("json");
-	res.send({item: query});
 }
 
 function get_intersecting_locations(query_to_locations_map) {
@@ -151,6 +152,7 @@ function get_url_names_for_url_ids(url_id_list, cb_function) {
 	var url_ids_to_url_mongoose_cb = function(err, element) {
 		if (!err && element !== null) {
 			console.log(element);
+			// add url from element into url_name_list
 		} else {
 			console.log("Error in getting url names from db");
 		}
@@ -161,8 +163,9 @@ function get_url_names_for_url_ids(url_id_list, cb_function) {
 		}
 	};
 
-	url_ids_to_url.find({url_num: "1"}, function(err, element) {
+	url_ids_to_url.find({"url_num": "1"}, function(err, element) {
 		console.log(err);
+		// Why the fuck does this return an empty array??
 		console.log(element);
 	});
 
