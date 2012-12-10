@@ -2,7 +2,7 @@ var mongoose = require("mongoose")
 	, schema = require("../models/schemas")
 	, word_to_tf_idf = schema.tf_idf
 	, word_to_url_ids = schema.word_to_url_ids
-	, url_ids_to_url = schema.UrlIdsToUrl;
+	, url_ids_to_url = schema.url_ids_to_url;
 
 exports.show = function(req, res) {
 	res.render('search', {
@@ -17,15 +17,15 @@ exports.add = function(req, res) {
 	get_query_to_locations_map(queries, function(query_to_locations_map) {
 		intersect_locations = get_intersecting_locations(query_to_locations_map);
 		rest_of_locations = get_straggling_locations(query_to_locations_map, intersect_locations);
+
+		ranked_intersected_locations = rank_locations(intersect_locations);
+		ranked_stragger_locations = rank_locations(rest_of_locations);
+
+		combined_url_id_response = ranked_intersected_locations.concat(ranked_stragger_locations);
+		get_url_names_for_url_ids(combined_url_id_response, function(list_of_urls) {
+			//console.log(list_of_urls);
+		});
 	});
-
-	/*
-	ranked_intersected_locations = rank_locations(intersect_locations);
-	ranked_stragger_locations = rank_locations(rest_of_locations);
-
-	combined_url_id_response = ranked_intersected_locations.concat(ranked_stragger_locations);
-	list_of_urls = get_url_names_for_url_ids(combined_url_id_response);
-	*/
 
 	res.contentType("json");
 	res.send({item: query});
@@ -139,11 +139,39 @@ function unique_trimmed_list(list, r_list) {
 };
 
 function rank_locations(locations_list) {
-	return [];
+	// Finish functionallity for location ranking with webgraph data
+	return locations_list;
 }
 
-function get_url_names_for_url_ids(url_id_list) {
-	return [];
+function get_url_names_for_url_ids(url_id_list, cb_function) {
+	url_name_list = [];
+	num_urls = url_id_list.length;
+	num_urls_processed = 0;
+
+	var url_ids_to_url_mongoose_cb = function(err, element) {
+		if (!err && element !== null) {
+			console.log(element);
+		} else {
+			console.log("Error in getting url names from db");
+		}
+
+		num_urls_processed++;
+		if (num_urls_processed == num_urls) {
+			cb_function(url_name_list);
+		}
+	};
+
+	url_ids_to_url.find({url_num: "1"}, function(err, element) {
+		console.log(err);
+		console.log(element);
+	});
+
+	/*
+	for (index in url_id_list) {
+		url_id = url_id_list[index];
+		url_ids_to_url.find({"id": url_id}, url_ids_to_url_mongoose_cb);
+	}
+	*/
 }
 
 function get_query_to_locations_map(queries, cb_function) {

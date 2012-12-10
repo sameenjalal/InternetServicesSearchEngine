@@ -14,7 +14,7 @@ var WordToUrlIdsSchema = new Schema({
 });
 
 var UrlIdsToUrlSchema = new Schema({
-  "id": Number,
+  "url_num": String,
   "url": String
 });
 
