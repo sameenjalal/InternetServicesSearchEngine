@@ -24,11 +24,8 @@ exports.add = function(req, res) {
 
 		combined_url_id_response = ranked_intersected_locations.concat(ranked_stragger_locations);
 		get_url_names_for_url_ids(combined_url_id_response, function(list_of_urls) {
-			//console.log(list_of_urls);
-
-			// After I get the data back properly, res.send({items: list_of_urls});
 			res.contentType("json");
-			res.send({item: query});
+			res.send({urls: list_of_urls});
 		});
 	});
 }
@@ -152,8 +149,8 @@ function get_url_names_for_url_ids(url_id_list, cb_function) {
 
 	var url_ids_to_url_mongoose_cb = function(err, element) {
 		if (!err && element !== null) {
-			console.log(element);
-			// add url from element into url_name_list
+			url = element[0].url;
+			url_name_list.push(url);
 		} else {
 			console.log("Error in getting url names from db");
 		}
