@@ -2,7 +2,8 @@ var mongoose = require("mongoose")
 	, schemas = require("../models/schemas")
 	, word_to_tf_idf = schemas.tf_idf
 	, word_to_url_ids = schemas.word_to_url_ids
-	, url_ids_to_url = schemas.url_ids_to_url;
+	, url_ids_to_url = schemas.url_ids_to_url
+	, db = require("../app").db;
 
 exports.show = function(req, res) {
 	res.render('search', {
@@ -163,18 +164,10 @@ function get_url_names_for_url_ids(url_id_list, cb_function) {
 		}
 	};
 
-	url_ids_to_url.find({"url_num": "1"}, function(err, element) {
-		console.log(err);
-		// Why the fuck does this return an empty array??
-		console.log(element);
-	});
-
-	/*
 	for (index in url_id_list) {
 		url_id = url_id_list[index];
-		url_ids_to_url.find({"id": url_id}, url_ids_to_url_mongoose_cb);
+		url_ids_to_url.find({"url_num": url_id}, url_ids_to_url_mongoose_cb);
 	}
-	*/
 }
 
 function get_query_to_locations_map(queries, cb_function) {
