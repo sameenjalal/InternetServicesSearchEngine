@@ -38,7 +38,7 @@ class Line():
 def combine_dictionaries(main_dict, to_merge_dict):
 	for key, value in to_merge_dict.iteritems():
 		if key in main_dict:
-			main_dict[key] = main_dict[key] + to_merge_dict[key]
+			pass
 		else:
 			main_dict[key] = to_merge_dict[key]
 	return main_dict

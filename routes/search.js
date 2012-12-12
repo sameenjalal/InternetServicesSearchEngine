@@ -14,6 +14,7 @@ exports.show = function(req, res) {
 
 exports.add = function(req, res) {
 	query = req.body.add_element;
+	query = query.toLowerCase();
 	queries = query.split(" ");
 	get_query_to_locations_map(queries, function(query_to_locations_map) {
 		intersect_locations = get_intersecting_locations(query_to_locations_map);
@@ -42,7 +43,7 @@ function get_intersecting_locations(query_to_locations_map) {
 	}
 
 	if (!max_word || max_word.length === 0) {
-		console.log("Returned empty intersection with: " + max_word);
+		//console.log("Returned empty intersection with: " + max_word);
 		return [];
 	}
 	intersect_list = query_to_locations_map[max_word];
@@ -94,7 +95,7 @@ function get_straggling_locations(query_to_locations_map, intersecting_locations
 }
 
 function get_tf_idf_sorted_words_with_map(query_to_locations_map) {
-	// Finish the functionality of this function using mongo
+	// TODO: Finish the functionality of this function using mongo
 
 	word_list = [];
 	for (word in query_to_locations_map) {
@@ -104,7 +105,7 @@ function get_tf_idf_sorted_words_with_map(query_to_locations_map) {
 }
 
 function get_tf_idf_sorted_words_with_list(query_to_locations_list) {
-	// Finish the functionality of this function using mongo
+	// TODO: Finish the functionality of this function using mongo
 
 	word_list = [];
 	for (index in query_to_locations_list) {
@@ -138,7 +139,7 @@ function unique_trimmed_list(list, r_list) {
 };
 
 function rank_locations(locations_list) {
-	// Finish functionallity for location ranking with webgraph data
+	// TODO: Finish functionallity for location ranking with webgraph data
 	return locations_list;
 }
 
@@ -146,6 +147,11 @@ function get_url_names_for_url_ids(url_id_list, cb_function) {
 	url_name_list = [];
 	num_urls = url_id_list.length;
 	num_urls_processed = 0;
+	
+	if (num_urls == 0) {
+		cb_function([]);
+		return;
+	}
 
 	var url_ids_to_url_mongoose_cb = function(err, element) {
 		if (!err && element !== null) {
@@ -174,8 +180,9 @@ function get_query_to_locations_map(queries, cb_function) {
 
 	var mongoose_callback = function(err, element) {
 		if (!err && element !== null && element[0] && element[0].urls && element[0].urls[0]) {
-			qry = queries[num_queries_completed];
-			query_to_locations_map[qry] = parse_string_into_list(element[0].urls[0]);
+			word_from_db = element[0].word;
+			list_of_urls = element[0].urls[0];
+			query_to_locations_map[word_from_db] = parse_string_into_list(list_of_urls);
 		}
 
 		num_queries_completed++;
@@ -186,6 +193,7 @@ function get_query_to_locations_map(queries, cb_function) {
 
 	for (var i = 0; i < num_queries; i++) {
 		q = queries[i];
+		console.log(q);
 		word_to_url_ids.find({"word": q}, mongoose_callback);
 	}
 }

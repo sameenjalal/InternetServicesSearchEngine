@@ -19,7 +19,10 @@ def create_url_map(file):
 	url_map = dict()
 	# calculate max word count in each doc
 	for line_data in fileinput.input(file):
+		line_data = line_data.strip();
 		line = Line(line_data)
+		if line.dne == 0:
+			continue
 		if line.word in url_map:
 			url_map[line.word].append(line.url_id)
 		else:
@@ -30,9 +33,13 @@ class Line():
 	def __init__(self, line):
 		# split up line
 		split_line = re.split('\s+', line)
-		self.url_id = int(split_line[1])
-		self.word = split_line[3]
-		self.freq = int(split_line[4])
+		if len(split_line) < 5:
+			self.dne = 0
+		else:
+			self.dne = 1
+			self.url_id = int(split_line[1])
+			self.word = split_line[3]
+			self.freq = int(split_line[4])
 
 def combine_dictionaries(main_dict, to_merge_dict):
 	for key, value in to_merge_dict.iteritems():

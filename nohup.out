@@ -1,0 +1,233 @@
+Express server listening on port 3000
+Mongoose has opened a connection to mongodb://samjalal:robin@linus.mongohq.com:10002/InternetServices
+[90mGET /search [32m200 [90m13ms - 712[0m
+[90mGET /stylesheets/style.css [36m304 [90m3ms[0m
+[90mGET /javascripts/jquery-1.8.2.min.js [36m304 [90m2ms[0m
+[90mGET /javascripts/add.js [36m304 [90m1ms[0m
+[90mPOST /add [32m200 [90m87ms - 16[0m
+[90mPOST /add [32m200 [90m200ms - 11.92kb[0m
+[90mGET /search [32m200 [90m2ms - 712[0m
+[90mGET /stylesheets/style.css [32m200 [90m2ms - 333[0m
+[90mGET /javascripts/add.js [32m200 [90m3ms - 807[0m
+[90mGET /javascripts/jquery-1.8.2.min.js [32m200 [90m161ms - 91.25kb[0m
+[90mPOST /add [32m200 [90m82ms - 16[0m
+[90mPOST /add [32m200 [90m139ms - 7.53kb[0m
+[90mPOST /add [32m200 [90m108ms - 1.94kb[0m
+[90mPOST /add [32m200 [90m91ms - 285[0m
+[90mPOST /add [32m200 [90m83ms - 16[0m
+[90mPOST /add [32m200 [90m127ms - 6.77kb[0m
+[90mGET /search [32m200 [90m7ms - 712[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.8.2.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/add.js [36m304 [90m0ms[0m
+[90mPOST /add [32m200 [90m101ms - 1.74kb[0m
+[90mPOST /add [32m200 [90m109ms - 1.74kb[0m
+[90mGET /search [32m200 [90m1ms - 712[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.8.2.min.js [36m304 [90m0ms[0m
+[90mGET /javascripts/add.js [36m304 [90m1ms[0m
+[90mGET /search [32m200 [90m1ms - 712[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.8.2.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/add.js [36m304 [90m0ms[0m
+[90mPOST /add [32m200 [90m104ms - 1.86kb[0m
+[90mPOST /add [32m200 [90m116ms - 3.37kb[0m
+[90mGET /search [32m200 [90m3ms - 712[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.8.2.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/add.js [36m304 [90m0ms[0m
+[90mGET /search [32m200 [90m1ms - 712[0m
+[90mGET /stylesheets/style.css [32m200 [90m2ms - 333[0m
+[90mGET /javascripts/add.js [32m200 [90m1ms - 807[0m
+[90mGET /javascripts/jquery-1.8.2.min.js [32m200 [90m177ms - 91.25kb[0m
+[90mPOST /add [32m200 [90m161ms - 131[0m
+[90mPOST /add [32m200 [90m331ms - 8.48kb[0m
+[90mGET /search [32m200 [90m2ms - 712[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/jquery-1.8.2.min.js [36m304 [90m1ms[0m
+[90mGET /javascripts/add.js [36m304 [90m1ms[0m
+[90mPOST /add [32m200 [90m485ms - 11.33kb[0m
+[90mGET /search [32m200 [90m1ms - 712[0m
+[90mGET /stylesheets/style.css [36m304 [90m2ms[0m
+[90mGET /javascripts/jquery-1.8.2.min.js [36m304 [90m0ms[0m
+[90mGET /javascripts/add.js [36m304 [90m0ms[0m
+[90mPOST /add [32m200 [90m186ms - 843[0m
+[90mGET /search [32m200 [90m1ms - 712[0m
+[90mGET /javascripts/jquery-1.8.2.min.js [36m304 [90m2ms[0m
+[90mGET /stylesheets/style.css [36m304 [90m1ms[0m
+[90mGET /javascripts/add.js [36m304 [90m1ms[0m
+[90mPOST /add [32m200 [90m308ms - 16[0m
+[90mPOST /add [32m200 [90m159ms - 131[0m
+[90mPOST /add [32m200 [90m195ms - 1.27kb[0m
+[90mPOST /add [32m200 [90m158ms - 131[0m
+[90mPOST /add [32m200 [90m158ms - 195[0m
+[90mPOST /add [32m200 [90m152ms - 16[0m
+[90mPOST /add [32m200 [90m265ms - 6.46kb[0m
+[90mPOST /add [32m200 [90m307ms - 8.48kb[0m
+[90mPOST /add [32m200 [90m279ms - 3.17kb[0m
+[90mPOST /add [32m200 [90m243ms - 2.01kb[0m
+[90mPOST /add [32m200 [90m179ms - 1.33kb[0m
+[90mPOST /add [32m200 [90m174ms - 870[0m
+[90mPOST /add [32m200 [90m172ms - 1006[0m
+[90mPOST /add [32m200 [90m231ms - 3.01kb[0m
+[90mPOST /add [32m200 [90m317ms - 3.33kb[0m
+[90mPOST /add [32m200 [90m272ms - 704[0m
+[90mPOST /add [32m200 [90m331ms - 5.65kb[0m
+[90mPOST /add [32m200 [90m449ms - 6.22kb[0m
+[90mPOST /add [32m200 [90m187ms - 1006[0m
+[90mGET /search [32m200 [90m2ms - 712[0m
+[90mGET /stylesheets/style.css [32m200 [90m3ms - 333[0m
+[90mGET /javascripts/jquery-1.8.2.min.js [36m304 [90m2ms[0m
+[90mGET /javascripts/add.js [32m200 [90m1ms - 807[0m
+[90mGET /search [32m200 [90m1ms - 712[0m
+[90mGET /stylesheets/style.css [36m304 [90m0ms[0m
+[90mGET /javascripts/jquery-1.8.2.min.js [36m304 [90m0ms[0m
+[90mGET /javascripts/add.js [36m304 [90m2ms[0m
+[90mGET /search [32m200 [90m2ms - 712[0m
+[90mGET /stylesheets/style.css [36m304 [90m0ms[0m
+[90mGET /javascripts/jquery-1.8.2.min.js [36m304 [90m0ms[0m
+[90mGET /javascripts/add.js [36m304 [90m0ms[0m
+[90mPOST /add [32m200 [90m394ms - 5.65kb[0m
+[90mPOST /add [32m200 [90m343ms - 5.65kb[0m
+[90mPOST /add [32m200 [90m191ms - 1006[0m
+[90mPOST /add [32m200 [90m195ms - 16[0m
+[90mPOST /add [32m200 [90m199ms - 1006[0m
+[90mPOST /add [32m200 [90m193ms - 843[0m
+[90mPOST /add [32m200 [90m296ms - 2.01kb[0m
+[90mPOST /add [32m200 [90m210ms - 214[0m
+[90mPOST /add [32m200 [90m182ms - 214[0m
+[90mPOST /add [32m200 [90m183ms - 870[0m
+[90mPOST /add [32m200 [90m200ms - 65[0m
+[90mPOST /add [32m200 [90m195ms - 1.32kb[0m
+[90mPOST /add [32m200 [90m351ms - 6.49kb[0m
+[90mPOST /add [32m200 [90m242ms - 3.01kb[0m
+[90mPOST /add [32m200 [90m175ms - 57[0m
+[90mPOST /add [32m200 [90m253ms - 4.27kb[0m
+[90mGET /search [32m200 [90m2ms - 712[0m
+[90mGET /stylesheets/style.css [32m200 [90m2ms - 333[0m
+[90mGET /javascripts/add.js [32m200 [90m1ms - 807[0m
+[90mGET /javascripts/jquery-1.8.2.min.js [32m200 [90m637ms - 91.25kb[0m
+[90mPOST /add [32m200 [90m182ms - 870[0m
+[90mPOST /add [32m200 [90m159ms - 184[0m
+[90mPOST /add [32m200 [90m177ms - 409[0m
+[90mPOST /add [32m200 [90m185ms - 698[0m
+[90mPOST /add [32m200 [90m455ms - 6.22kb[0m
+[90mPOST /add [32m200 [90m174ms - 466[0m
+[90mPOST /add [32m200 [90m191ms - 1.04kb[0m
+[90mPOST /add [32m200 [90m179ms - 750[0m
+[90mPOST /add [32m200 [90m177ms - 1.17kb[0m
+[90mPOST /add [32m200 [90m249ms - 16[0m
+[90mPOST /add [32m200 [90m241ms - 16[0m
+[90mPOST /add [32m200 [90m359ms - 5.65kb[0m
+Error: Failed to lookup view "index"
+    at Function.app.render (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/application.js:492:17)
+    at ServerResponse.res.render (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/response.js:718:7)
+    at exports.index (/home/samjalal/public/sameenjalal.com/InternetServices/routes/index.js:7:7)
+    at callbacks (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:162:11)
+    at param (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:136:11)
+    at pass (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:143:5)
+    at Router._dispatch (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:170:5)
+    at Object.router (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:33:10)
+    at next (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/node_modules/connect/lib/proto.js:190:15)
+    at Object.methodOverride [as handle] (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/node_modules/connect/lib/middleware/methodOverride.js:37:5)
+[90mGET / [31m500 [90m39ms[0m
+Error: Failed to lookup view "index"
+    at Function.app.render (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/application.js:492:17)
+    at ServerResponse.res.render (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/response.js:718:7)
+    at exports.index (/home/samjalal/public/sameenjalal.com/InternetServices/routes/index.js:7:7)
+    at callbacks (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:162:11)
+    at param (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:136:11)
+    at pass (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:143:5)
+    at Router._dispatch (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:170:5)
+    at Object.router (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:33:10)
+    at next (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/node_modules/connect/lib/proto.js:190:15)
+    at Object.methodOverride [as handle] (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/node_modules/connect/lib/middleware/methodOverride.js:37:5)
+[90mGET / [31m500 [90m3ms[0m
+Error: Failed to lookup view "index"
+    at Function.app.render (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/application.js:492:17)
+    at ServerResponse.res.render (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/response.js:718:7)
+    at exports.index (/home/samjalal/public/sameenjalal.com/InternetServices/routes/index.js:7:7)
+    at callbacks (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:162:11)
+    at param (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:136:11)
+    at pass (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:143:5)
+    at Router._dispatch (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:170:5)
+    at Object.router (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:33:10)
+    at next (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/node_modules/connect/lib/proto.js:190:15)
+    at Object.methodOverride [as handle] (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/node_modules/connect/lib/middleware/methodOverride.js:37:5)
+[90mGET / [31m500 [90m3ms[0m
+Error: Failed to lookup view "index"
+    at Function.app.render (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/application.js:492:17)
+    at ServerResponse.res.render (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/response.js:718:7)
+    at exports.index (/home/samjalal/public/sameenjalal.com/InternetServices/routes/index.js:7:7)
+    at callbacks (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:162:11)
+    at param (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:136:11)
+    at pass (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:143:5)
+    at Router._dispatch (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:170:5)
+    at Object.router (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:33:10)
+    at next (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/node_modules/connect/lib/proto.js:190:15)
+    at Object.methodOverride [as handle] (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/node_modules/connect/lib/middleware/methodOverride.js:37:5)
+[90mGET / [31m500 [90m2ms[0m
+Error: Failed to lookup view "index"
+    at Function.app.render (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/application.js:492:17)
+    at ServerResponse.res.render (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/response.js:718:7)
+    at exports.index (/home/samjalal/public/sameenjalal.com/InternetServices/routes/index.js:7:7)
+    at callbacks (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:162:11)
+    at param (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:136:11)
+    at pass (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:143:5)
+    at Router._dispatch (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:170:5)
+    at Object.router (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:33:10)
+    at next (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/node_modules/connect/lib/proto.js:190:15)
+    at Object.methodOverride [as handle] (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/node_modules/connect/lib/middleware/methodOverride.js:37:5)
+[90mGET / [31m500 [90m2ms[0m
+Error: Failed to lookup view "index"
+    at Function.app.render (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/application.js:492:17)
+    at ServerResponse.res.render (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/response.js:718:7)
+    at exports.index (/home/samjalal/public/sameenjalal.com/InternetServices/routes/index.js:7:7)
+    at callbacks (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:162:11)
+    at param (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:136:11)
+    at pass (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:143:5)
+    at Router._dispatch (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:170:5)
+    at Object.router (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:33:10)
+    at next (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/node_modules/connect/lib/proto.js:190:15)
+    at Object.methodOverride [as handle] (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/node_modules/connect/lib/middleware/methodOverride.js:37:5)
+[90mGET / [31m500 [90m2ms[0m
+Error: Failed to lookup view "index"
+    at Function.app.render (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/application.js:492:17)
+    at ServerResponse.res.render (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/response.js:718:7)
+    at exports.index (/home/samjalal/public/sameenjalal.com/InternetServices/routes/index.js:7:7)
+    at callbacks (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:162:11)
+    at param (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:136:11)
+    at pass (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:143:5)
+    at Router._dispatch (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:170:5)
+    at Object.router (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:33:10)
+    at next (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/node_modules/connect/lib/proto.js:190:15)
+    at Object.methodOverride [as handle] (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/node_modules/connect/lib/middleware/methodOverride.js:37:5)
+[90mGET / [31m500 [90m2ms[0m
+Error: Failed to lookup view "index"
+    at Function.app.render (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/application.js:492:17)
+    at ServerResponse.res.render (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/response.js:718:7)
+    at exports.index (/home/samjalal/public/sameenjalal.com/InternetServices/routes/index.js:7:7)
+    at callbacks (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:162:11)
+    at param (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:136:11)
+    at pass (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:143:5)
+    at Router._dispatch (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:170:5)
+    at Object.router (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:33:10)
+    at next (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/node_modules/connect/lib/proto.js:190:15)
+    at Object.methodOverride [as handle] (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/node_modules/connect/lib/middleware/methodOverride.js:37:5)
+[90mGET / [31m500 [90m3ms[0m
+Error: Failed to lookup view "index"
+    at Function.app.render (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/application.js:492:17)
+    at ServerResponse.res.render (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/response.js:718:7)
+    at exports.index (/home/samjalal/public/sameenjalal.com/InternetServices/routes/index.js:7:7)
+    at callbacks (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:162:11)
+    at param (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:136:11)
+    at pass (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:143:5)
+    at Router._dispatch (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:170:5)
+    at Object.router (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/lib/router/index.js:33:10)
+    at next (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/node_modules/connect/lib/proto.js:190:15)
+    at Object.methodOverride [as handle] (/home/samjalal/public/sameenjalal.com/InternetServices/node_modules/express/node_modules/connect/lib/middleware/methodOverride.js:37:5)
+[90mGET / [31m500 [90m4ms[0m
+[90mGET /search [32m200 [90m10ms - 712[0m
+[90mGET /stylesheets/style.css [32m200 [90m11ms - 333[0m
+[90mGET /javascripts/add.js [32m200 [90m15ms - 807[0m
+[90mGET /javascripts/jquery-1.8.2.min.js [32m200 [90m10953ms - 91.25kb[0m

@@ -64,9 +64,14 @@ class Line():
 	def __init__(self, line):
 		# split up line
 		split_line = re.split('\s+', line)
-		self.url_id = int(split_line[1])
-		self.word = split_line[3]
-		self.freq = int(split_line[4])
+		if len(split_line) < 5 or split_line[4] == "":
+			self.url_id = int(split_line[1])
+			self.word = "error"
+			self.freq = int(split_line[3])
+		else:
+			self.url_id = int(split_line[1])
+			self.word = split_line[3]
+			self.freq = int(split_line[4])
 
 def combine_dictionaries(main_dict, to_merge_dict):
 	for key, value in to_merge_dict.iteritems():
