@@ -53,6 +53,7 @@ function get_intersecting_locations(query_to_locations_map) {
 		}
 
 		intersect_list = list_intersection(intersect_list.sort(), query_to_locations_map[word].sort());
+		console.log("intersect list: " + intersect_list);
 	}
 	return get_tf_idf_sorted_words_with_list(intersect_list);
 }
@@ -181,7 +182,7 @@ function get_query_to_locations_map(queries, cb_function) {
 	var mongoose_callback = function(err, element) {
 		if (!err && element !== null && element[0] && element[0].urls && element[0].urls[0]) {
 			word_from_db = element[0].word;
-			list_of_urls = element[0].urls[0];
+			list_of_urls = element[1].urls[0];
 			query_to_locations_map[word_from_db] = parse_string_into_list(list_of_urls);
 		}
 

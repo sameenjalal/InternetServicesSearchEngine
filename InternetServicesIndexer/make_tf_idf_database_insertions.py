@@ -7,46 +7,43 @@ import re
 import math
 import pymongo
 
-#path = "path/to/file"
-path = "/home/samjalal/public/sameenjalal.com/InternetServices/InternetServicesIndexer/parse_output/"
-prefix_to_part_files = "parse"
+file = "/home/samjalal/public/sameenjalal.com/InternetServices/InternetServicesIndexer/parse_output/output"
 mongohq_url = "mongodb://samjalal:robin@linus.mongohq.com:10002/InternetServices"
 
-def run(file):
-	url_id_to_max_word_count = create_url_id_to_max_word_count_map(file) # works
-	max_urls = len(url_id_to_max_word_count) # works
+conn = pymongo.Connection("linus.mongohq.com", 10002)
+db = conn["InternetServices"]
+db.authenticate("samjalal", "robin")
 
-	word_to_num_appearances = create_word_to_num_appearances(file)
-	word_to_tf_idf = create_word_to_tf_idf(file, url_id_to_max_word_count, word_to_num_appearances, max_urls)
-	return word_to_tf_idf
-
-def create_word_to_tf_idf(file, url_id_to_max_word_count, word_to_num_appearances, max_urls):
-	word_to_tf_idf = dict()
+def create_word_to_tf_idf(url_id_to_max_word_count, word_to_num_appearances, max_urls):
 	for line_data in fileinput.input(file):
 		line = Line(line_data)
+		if line.error == 1:
+			continue
 		num_appearances = word_to_num_appearances[line.word]
 		max_word_count = url_id_to_max_word_count[line.url_id]
-		if line.word in word_to_tf_idf:
-			word_to_tf_idf[line.word] = calculate_tf_idf(max_urls, num_appearances, line.freq, max_word_count) + word_to_tf_idf[line.word]
-		else:
-			word_to_tf_idf[line.word] = calculate_tf_idf(max_urls, num_appearances, line.freq, max_word_count)
-	return word_to_tf_idf
 
-def create_url_id_to_max_word_count_map(file):
+		tf_idf = calculate_tf_idf(max_urls, num_appearances, line.freq, max_word_count)
+		insert_into_mongohq(tf_idf, line.url_id, line.word)
+
+def create_url_id_to_max_word_count_map():
 	url_id_to_max_word_count = dict()
 	# calculate max word count in each doc
 	for line_data in fileinput.input(file):
 		line = Line(line_data)
+		if line.error == 1:
+			continue
 		if line.url_id in url_id_to_max_word_count:
 			url_id_to_max_word_count[line.url_id] = max(url_id_to_max_word_count[line.url_id], line.freq)
 		else:
 			url_id_to_max_word_count[line.url_id] = line.freq
 	return url_id_to_max_word_count
 
-def create_word_to_num_appearances(file):
+def create_word_to_num_appearances():
 	word_to_num_appearances = dict()
 	for line_data in fileinput.input(file):
 		line = Line(line_data)
+		if line.error == 1:
+			continue
 		if line.word in word_to_num_appearances:
 			word_to_num_appearances[line.word] += 1
 		else:
@@ -62,40 +59,24 @@ def calculate_tf_idf(num_urls_total, num_urls_with_word, local_frequency, max_lo
 
 class Line():
 	def __init__(self, line):
-		# split up line
 		split_line = re.split('\s+', line)
-		if len(split_line) < 5 or split_line[4] == "":
-			self.url_id = int(split_line[1])
-			self.word = "error"
-			self.freq = int(split_line[3])
+		if len(split_line[2]) != 0:
+			self.error = 0
+			self.url_id = int(split_line[0])
+			self.word = split_line[1]
+			self.freq = int(split_line[2])
 		else:
-			self.url_id = int(split_line[1])
-			self.word = split_line[3]
-			self.freq = int(split_line[4])
+			self.error = 1
 
-def combine_dictionaries(main_dict, to_merge_dict):
-	for key, value in to_merge_dict.iteritems():
-		if key in main_dict:
-			main_dict[key] = main_dict[key] + to_merge_dict[key]
-		else:
-			main_dict[key] = to_merge_dict[key]
-	return main_dict
-
-def insert_into_mongohq(db, key, val):
-  db.word_to_tf_idf.insert({"word": str(key), "tf_idf": str(val)})
+def insert_into_mongohq(tf_idf, url_id, word):
+	db.word_to_tf_idf.insert({"word": word, "tf_idf": tf_idf, "url_id": url_id})
 
 def main():
-	conn = pymongo.Connection("linus.mongohq.com", 10002)
-	db = conn["InternetServices"]
-	db.authenticate("samjalal", "robin")
+	url_id_to_max_word_count = create_url_id_to_max_word_count_map() # works
+	max_urls = len(url_id_to_max_word_count) # works
 
-	combined_tf_idf = dict()
-	for file in os.listdir(path):
-		if file.startswith(prefix_to_part_files):
-			combined_td_idf = combine_dictionaries(combined_tf_idf, run(path + file))
-
-	for key, value in sorted(combined_tf_idf.iteritems(), key=lambda (k,v): (k,v)):
-		insert_into_mongohq(db, key, value)
+	word_to_num_appearances = create_word_to_num_appearances()
+	create_word_to_tf_idf(url_id_to_max_word_count, word_to_num_appearances, max_urls)
 
 if __name__ == "__main__":
 	main()
