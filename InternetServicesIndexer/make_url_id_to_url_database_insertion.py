@@ -27,11 +27,11 @@ class Line():
 		line = line.strip()
 		split_line = re.split('\s+', line)
 
-		self.id = str(split_line[0])
+		self.id = int(split_line[0])
 		self.url = str(split_line[1])
 
 def insert_into_mongohq(id, url, title):
-	db.url_ids_to_url.insert({"url_num": id, "url": url, "title": title})
+	db.url_ids_to_url.insert({"url_id": id, "url": url, "title": title})
 
 def main():
 	for line_data in fileinput.input(file):

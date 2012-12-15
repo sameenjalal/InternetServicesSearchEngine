@@ -1,26 +1,67 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
+
+#page {
+	width: 800px;
+	margin: 0 auto;
+}
 
 a {
-  color: #00B7FF; }
-
-.padding_task_item {
-  padding: 15px 5px; }
+  color: #00B7FF;
+}
 
 .center {
-  margin: auto; }
-
-.title_width {
-  width: 20%; }
-
-.form_width {
-  width: 30%; }
-
-.content_width {
-  width: 50%; }
+  margin: auto;
+}
 
 #result_item {
 	padding: 6px;
+}
+
+#new_search {
+	width: 400px;
+}
+
+#results {
+	min-height: 400px;
+	margin: auto;
+}
+
+ol {
+	list-style-type: none;
+}
+
+#url_link {
+	padding-left: 5%;
+}
+
+#header {
+	background-color: #569bc3;
+	width: 800px;
+	text-align: center;
+}
+
+#title {
+	margin: auto;
+	position: relative;
+}
+
+#form {
+	height: 40px;
+	width: 800px;
+}
+
+#footer {
+	height: 20px;
+	padding-top: 10px;
+	width: 800px;
+	background-color: #569bc3;
+	color: #fff;
+	text-align: center;
+	font-family: "Arial";
+	font-size: 12px;
+	font-style: normal;
 }

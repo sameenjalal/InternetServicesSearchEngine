@@ -1,32 +1,41 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
   <head>
-    <title><%=title %></title>
+    <title>SUSY Search</title>
     <link href="/stylesheets/style.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/jquery-1.8.2.min.js" ></script>
     <script src="/javascripts/add.js" ></script>
   </head>
 
   <body>
-    <div id="title" class="center title_width" >
-      <%=title %>
-    </div>
+		<div id="page">
+			<div id="header">
+				<div id="title" class="title_width">
+					<img src="images/searchlogowide.jpg">
+				</div>
 
-    <div id="form" class="center form_width" >
-      <form id="submit_form" >
-        <input type="text" name="add_element" id="new_search" />
-        <input type="submit" value="Submit" id="submit" />
-      </form>
-    </div>
+				<div id="form" class="form_width">
+					<form id="submit_form" >
+						<input type="text" name="add_element" id="new_search" />
+						<input type="submit" value="Search" id="submit" />
+					</form>
+				</div>
+			</div>
 
-    <div id="results" class="center content_width" >
-      <ol id="result_list" >
-        <% for (var i in results) { %>
-          <li id="result_item" >
-            <%=results[i] %>
-          </li>
-        <% } %>
-      </ol>
-    </div>
+			<div id="results" class="content_width" >
+				<ol id="result_list" >
+					<% for (var i in results) { %>
+						<li id="result_item" >
+							<%=results[i] %>
+						</li>
+					<% } %>
+				</ol>
+			</div>
+			
+			<div id="footer" class="footer_width">
+				Copyright &copy 2012 All rights reserved. Sameen Jalal, Umut Kuran, Yevgen Mustafayev, Stuti Shrivastava.
+			</div>
+		</div>
   </body>
 </html>
+
